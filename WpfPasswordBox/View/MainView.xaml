@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfPasswordBox.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfPasswordBox"
+        xmlns:vm="clr-namespace:WpfPasswordBox.ViewModel"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <PasswordBox
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Width="160"
+            local:PasswordBoxHelper.Password="{Binding Path=User.Password}"/>
+        <Button
+            Content="Button"
+            HorizontalAlignment="Left"
+            Margin="264,173,0,0"
+            VerticalAlignment="Top"
+            Width="74"
+            Command="{Binding Path=ExecuteCommand}"/>
+    </Grid>
+</Window>
